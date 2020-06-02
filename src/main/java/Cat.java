@@ -15,14 +15,38 @@ public class Cat
 
     private String name;
     private int hunger;
+    private int satiety;
 
-    public Cat(String name, int hunger)
+    public Cat(String name, int hunger, int satiety)
     {
         this.name = name;
         this.hunger = hunger;
+        this.satiety = satiety;
     }
+
+    public void hunger()
+    {
+        System.out.println("Голод кошечки " + hunger);
+    }
+
     public void eatFrom(Pipkin pipkin)
     {
         pipkin.decreaseFood(hunger);
+    }
+//3. Каждому коту нужно добавить поле сытость (когда создаем котов, они голодны).
+//Если коту удалось покушать (хватило еды), сытость = true
+
+    public boolean amountSatiety(Pipkin pipkin)
+    {
+        satiety = hunger;
+        if (satiety <= pipkin.getFood())
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
     }
 }

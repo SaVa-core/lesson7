@@ -14,11 +14,21 @@ public class Main {
 
     public static void main(String[] args)
     {
-        Cat cat = new Cat("Murzik", 5 );
-        Pipkin pipkin = new Pipkin(20);
+        Cat[] cat = new Cat[3];
+        cat[1] = new Cat("Murzik", 41, 0);
+        cat[2] = new Cat("Vasya", 16, 0);
+
+        Pipkin pipkin = new Pipkin(40);
+
 
         pipkin.info();
-        cat.eatFrom(pipkin);
+        cat[1].hunger();
+        System.out.println("Сытость = " + cat[1].amountSatiety(pipkin));
+        cat[1].eatFrom(pipkin);
+        pipkin.info();
+        cat[2].hunger();
+        System.out.println("Сытость = " + cat[2].amountSatiety(pipkin));
+        cat[2].eatFrom(pipkin);
         pipkin.info();
     }
 }

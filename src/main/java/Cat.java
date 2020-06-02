@@ -33,12 +33,11 @@ public class Cat
     {
         pipkin.decreaseFood(hunger);
     }
-//3. Каждому коту нужно добавить поле сытость (когда создаем котов, они голодны).
-//Если коту удалось покушать (хватило еды), сытость = true
 
     public boolean amountSatiety(Pipkin pipkin)
     {
         satiety = hunger;
+
         if (satiety <= pipkin.getFood())
         {
             return true;

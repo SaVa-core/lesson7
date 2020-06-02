@@ -18,18 +18,18 @@ public class Pipkin
 
     public void decreaseFood(int animalHunger)
     {
+
         if (food < animalHunger)
         {
             System.out.println("Добавьте еды, кошечке нечего есть. Сколько добавить? ");
-
             int add = scanner.nextInt();
-
             food = add + food;
         }
 
-         if (food > animalHunger)
+          else
         {
             food = food - animalHunger;
+
         }
     }
 
